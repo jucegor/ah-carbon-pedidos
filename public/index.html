@@ -27,7 +27,7 @@ button{cursor:pointer}
 .wrap{max-width:560px;margin:0 auto;padding:0 16px}
 
 header{padding:22px 0 10px}
-.logo{font-family:var(--head);font-size:44px;line-height:.95;letter-spacing:.5px;margin:0;font-weight:400}
+.logo{font-family:var(--head);font-size:44px;line-height:.95;letter-spacing:.5px;margin:0;font-weight:400;overflow-wrap:break-word}
 .logo small{display:block;font-size:26px;color:var(--accent);margin-top:4px}
 .sub{color:var(--muted);margin:10px 0 0;font-size:15px}
 
@@ -35,7 +35,7 @@ nav.cats{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:v
 nav.cats a{flex:none;padding:8px 14px;border-radius:99px;border:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:800;font-size:14px;background:var(--panel)}
 
 section{padding-top:22px}
-h2{font-family:var(--head);font-weight:400;font-size:28px;letter-spacing:.5px;color:var(--accent);margin:0 0 6px}
+h2{font-family:var(--head);font-weight:400;font-size:28px;letter-spacing:.5px;color:var(--accent);margin:0 0 6px;overflow-wrap:break-word}
 .item{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 0;border-bottom:1px solid var(--line)}
 .item h3{margin:0;font-size:17px;font-weight:800}
 .item p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
@@ -140,7 +140,8 @@ const NEGOCIO = {
       { n: "Papas a la francesa con salchicha", p: 45 },
       { n: "Alitas BBQ", p: 90 },
       { n: "Alitas Búfalo", p: 90 },
-      { n: "Alitas Mango Habanero", p: 90 }
+      { n: "Alitas Mango Habanero", p: 90 },
+      { n: "Boneless con papas", p: 115 }
     ]},
     { cat: "Bebidas", items: [
       { n: "Refresco", p: 25, img: IMG.refresco }
@@ -181,7 +182,7 @@ function renderMenu(){
     </section>`).join("");
   $("#app").innerHTML = `
     <header>
-      <h1 class="logo">${esc(NEGOCIO.nombre.replace("¡Ah Carbón! ","¡Ah Carbón!"))}<small>Hamburguesas</small></h1>
+      <h1 class="logo">${esc(NEGOCIO.nombre.replace(" Hamburguesas",""))}<small>Hamburguesas</small></h1>
       <p class="sub">${esc(NEGOCIO.mensajeInicio)}</p>
       <div class="note"><span aria-hidden="true">🏪</span><span><strong>Solo para recoger en tienda</strong>${esc(NEGOCIO.notaRecoger)}</span></div>
     </header>
